@@ -2,25 +2,34 @@ import {InvoiceJSONSchema} from "../invoiceSchema";
 import * as React from 'react'
 
 export function showInvoice(invoice: InvoiceJSONSchema) {
-    let rows = []
-    const html =
+    const items = []
 
-    <table>
-        <thead>
+    for (const [index, value] of invoice.itemInvoices.entries()) {
+        items.push(<tr key={index}/>)
+    }
+    const objects = invoice.itemInvoices;
+    const html =
+        <table>
+            <thead>
             <tr>
                 <th>description</th>
                 <th>quantity</th>
                 <th>unitPriceWithoutTax</th>
                 <th>taxPercent</th>
             </tr>
-        </thead>
-        <tbody>
-        {   }
-        </tbody>
-    </table>
-    return <div>
-        {invoice.customer.name}
-    </div>
+            </thead>
+            <tbody>
+            {objects.map((object) => {
+               return <tr>
+                    <td>{object.description}</td>
+                <td>{object.quantity}</td>
+                    <td>{object.unitPriceWithoutTax}</td>
+                    <td>{object.taxPercent}</td>
+                </tr>
+            })}
+            </tbody>
+        </table>
+    return html
 }
 
 // var rows = [];
