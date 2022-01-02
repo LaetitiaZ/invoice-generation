@@ -8,7 +8,7 @@
 export interface InvoiceJSONSchema {
   reference: string;
   date: string;
-  paymenDelayInDays: number;
+  paymenDelayInDays?: number;
   customer: {
     name?: string;
     address?: Address;

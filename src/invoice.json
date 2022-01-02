@@ -5,7 +5,7 @@
   "required": [
     "reference",
     "date",
-    "paymenDelayInDays",
+    "paymentDelayInDays",
     "customer",
     "biller",
     "itemInvoices"

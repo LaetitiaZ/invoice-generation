@@ -1,0 +1,23 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table{
+    border: 1px solid black;
+}
+
+table tbody tr td,
+table thead tr th{
+    border: 1px solid black;
+    text-align: left;
+}
+
+table thead tr th{
+    background-color: darkgrey;
+    font-weight: bold;
+}
+
+
+.grid-container {
+    display:  inline-grid;
+}

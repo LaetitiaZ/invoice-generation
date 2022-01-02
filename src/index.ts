@@ -130,7 +130,7 @@ enum MIME_TYPES {
 }
 
 
-server.post<{ Body: InvoiceJSONSchema }>('/invoices', ((request, reply) => {
+server.post<{ Body: InvoiceJSONSchema }>('/invoices', (async (request, reply) => {
     switch (request.headers.accept) {
         case MIME_TYPES.JSON:
             request.body
@@ -138,6 +138,6 @@ server.post<{ Body: InvoiceJSONSchema }>('/invoices', ((request, reply) => {
         case MIME_TYPES.PDF:
             throw new Error('PDF are not yet implemented')
         default:
-            reply.type(MIME_TYPES.HTML).send(renderToString(showInvoice(request.body)))
+            reply.type(MIME_TYPES.HTML).send(renderToString(await showInvoice(request.body)))
     }
 }))
