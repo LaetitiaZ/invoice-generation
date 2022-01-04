@@ -8,34 +8,34 @@
 export interface InvoiceJSONSchema {
   reference: string;
   date: string;
-  paymenDelayInDays?: number;
+  paymentDelayInDays: number;
   customer: {
-    name?: string;
-    address?: Address;
+    name: string;
+    address: Address;
     [k: string]: unknown;
   };
   biller: {
-    phoneNumber?: string;
-    email?: string;
-    invoiceLegalFooter?: string;
-    address?: Address;
+    phoneNumber: string;
+    email: string;
+    invoiceLegalFooter: string;
+    address: Address;
     [k: string]: unknown;
   };
   itemInvoices: {
-    description?: string;
-    quantity?: number;
-    unitPriceWithoutTax?: number;
-    taxPercent?: number;
+    description: string;
+    quantity: number;
+    unitPriceWithoutTax: number;
+    taxPercent: number;
     [k: string]: unknown;
   }[];
   [k: string]: unknown;
 }
 export interface Address {
-  street?: string;
-  city?: string;
-  zipcode?: string;
+  street: string;
+  city: string;
+  zipcode: string;
   state?: string | null;
-  country?: string;
+  country: string;
   additional?: string | null;
   [k: string]: unknown;
 }

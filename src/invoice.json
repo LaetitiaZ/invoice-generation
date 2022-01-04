@@ -18,11 +18,15 @@
       "type": "string",
       "format": "date"
     },
-    "paymenDelayInDays": {
+    "paymentDelayInDays": {
       "type": "number"
     },
     "customer": {
       "type": "object",
+      "required": [
+        "name",
+        "address"
+      ],
       "properties": {
         "name": {
           "type": "string"
@@ -34,6 +38,12 @@
     },
     "biller": {
       "type": "object",
+      "required": [
+        "phoneNumber",
+        "email",
+        "invoiceLegalFooter",
+        "address"
+      ],
       "properties": {
         "phoneNumber": {
           "type": "string"
@@ -54,6 +64,12 @@
       "type": "array",
       "items": {
         "type": "object",
+        "required": [
+          "description",
+          "quantity",
+          "unitPriceWithoutTax",
+          "taxPercent"
+        ],
         "properties": {
           "description": {
             "type": "string"
@@ -74,6 +90,13 @@
   "$defs": {
     "address": {
       "type": "object",
+      "required": [
+        "street",
+        "city",
+        "zipcode",
+        "customer",
+        "country"
+      ],
       "properties": {
         "street": {
           "type": "string"
